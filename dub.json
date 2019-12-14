@@ -1,0 +1,14 @@
+{
+    "authors": [
+        "karita"
+    ],
+    "preBuildCommands": [
+        "dub fetch dpp --version=0.4.0",
+        "dub run dpp -- --preprocess-only source/opencl.dpp"
+    ],
+    "libs": ["OpenCL"],
+    "copyright": "Copyright © 2019, karita",
+    "description": "dpp demo for OpenCL",
+    "license": "BSL-1.0",
+    "name": "dpp-opencl"
+}
