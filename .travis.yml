@@ -15,6 +15,7 @@ addons:
     packages:
       - clinfo
       - opencl-headers
+      - libclang-6.0-dev
 
 cache: apt
 

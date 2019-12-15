@@ -1,6 +1,8 @@
 module check;
 
-import opencl : CL_SUCCESS, cl_int;
+import std.stdio : writeln;
+
+import opencl;
 
 /// print opencl device info
 void printDeviceInfo(cl_device_id device)

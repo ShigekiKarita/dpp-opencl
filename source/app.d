@@ -1,7 +1,7 @@
 import std.stdio : writeln;
 
 import opencl;
-import check : checkCl;
+import check : checkCl, printDeviceInfo;
 
 
 void main()
