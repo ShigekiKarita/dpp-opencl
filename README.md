@@ -1,5 +1,6 @@
 # OpenCL demo using dpp
 
+![](https://github.com/ShigekiKarita/dpp-opencl/workflows/CI/badge.svg)
 
 ## install requirements
 
