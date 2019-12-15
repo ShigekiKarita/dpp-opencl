@@ -1,0 +1,17 @@
+name: CI
+
+on: [push]
+
+jobs:
+  test:
+
+    runs-on: ubuntu-18.04
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: test
+      run: |
+        sudo apt-get install -y clinfo libpocl-dev libclang-6.0-dev
+        source $(curl https://dlang.org/install.sh | bash -s -- ldc-1.18.0 -a)
+        clinfo
+        dub run        
