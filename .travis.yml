@@ -1,0 +1,23 @@
+os:
+  - linux
+
+language: d
+
+d:
+  - ldc
+  # - dmd
+
+env:
+  - ARCH="x86_64"
+
+addons:
+  apt:
+    packages:
+      - clinfo
+      - opencl-headers
+
+cache: apt
+
+script:
+  - clinfo
+  - dub run

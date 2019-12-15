@@ -4,6 +4,7 @@
 !LICENSE
 !dub.json
 !.gitignore
+!.travis.yml
 !source/
 !*.d
 !*.dpp

@@ -13,6 +13,7 @@ void main()
     checkCl!clGetDeviceIDs(platform, CL_DEVICE_TYPE_DEFAULT, 1, &device, null);
     auto context = checkCl!clCreateContext(null, 1, &device, null, null);
     scope (exit) checkCl!clReleaseContext(context);
+    printDeviceInfo(device);
 
     // compile
     auto source = q{
@@ -64,7 +65,9 @@ void main()
     // copy memory from device to host
     auto hc = new float[ha.length];
     checkCl!clEnqueueReadBuffer(queue, dc, CL_TRUE, 0, float.sizeof * hc.length, hc.ptr, 0, null, null);
-    ha[] += hb[];
-    assert(hc == ha);
+    auto expected = new float[ha.length];
+    expected[] = ha[] + hb[];
+    writeln(ha, " + ", hb, " -> ", hc);
+    assert(hc == expected);
     writeln("SUCEESS!!");
 }
